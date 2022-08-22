@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let url = 'http://www.baidu.com/?name=zhangsan&age=18&sex=nan'
+         function get(url) {
+           let arr = url.split('?').slice(1).join('').replace(/=/g,'&').split('&')
+            let arr1 = arr.reduce((acc,val,index,arr) => {
+                if(index %2 == 0) {
+                    acc[val] =arr[index+1]
+                }
+                 return acc 
+           },{})
+             return arr1
+        }
+        console.log(get(url));
+          
+    
+     
+    </script>
+</body>
+</html>
